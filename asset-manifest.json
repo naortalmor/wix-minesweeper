@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/wix-minesweeper/static/css/main.8a11ee1c.chunk.css",
+    "main.js": "/wix-minesweeper/static/js/main.7281e671.chunk.js",
+    "main.js.map": "/wix-minesweeper/static/js/main.7281e671.chunk.js.map",
+    "runtime-main.js": "/wix-minesweeper/static/js/runtime-main.d34d622e.js",
+    "runtime-main.js.map": "/wix-minesweeper/static/js/runtime-main.d34d622e.js.map",
+    "static/js/2.09796335.chunk.js": "/wix-minesweeper/static/js/2.09796335.chunk.js",
+    "static/js/2.09796335.chunk.js.map": "/wix-minesweeper/static/js/2.09796335.chunk.js.map",
+    "index.html": "/wix-minesweeper/index.html",
+    "precache-manifest.3641f4119c12aaa5a414f8b45936ea2c.js": "/wix-minesweeper/precache-manifest.3641f4119c12aaa5a414f8b45936ea2c.js",
+    "service-worker.js": "/wix-minesweeper/service-worker.js",
+    "static/css/main.8a11ee1c.chunk.css.map": "/wix-minesweeper/static/css/main.8a11ee1c.chunk.css.map",
+    "static/js/2.09796335.chunk.js.LICENSE.txt": "/wix-minesweeper/static/js/2.09796335.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d34d622e.js",
+    "static/js/2.09796335.chunk.js",
+    "static/css/main.8a11ee1c.chunk.css",
+    "static/js/main.7281e671.chunk.js"
+  ]
+}
