@@ -8,7 +8,25 @@ export class GameBuilder {
         return board;
     }
 
-    private static initBoard(height:number, width:number):Cell[][] {
+    static getNeighbors(row:number, col:number, board:Cell[][]):Cell[] {
+        const boardHeight:number = board.length;
+        const boardWidth:number = board[0].length;
+        let neighbors:Cell[] = [];
+
+        if (row > 0) neighbors.push(board[row - 1][col]);
+        if (col < boardWidth - 1) neighbors.push(board[row][col + 1]);
+        if (row < boardHeight - 1) neighbors.push(board[row + 1][col]);
+        if (col > 0) neighbors.push(board[row][col - 1]);
+
+        if (row > 0 && col > 0) neighbors.push(board[row - 1][col - 1]);
+        if (row > 0 && col < boardWidth - 1) neighbors.push(board[row - 1][col + 1]);
+        if (row < boardHeight - 1 && col < boardWidth - 1) neighbors.push(board[row + 1][col + 1]);
+        if (row < boardHeight - 1 && col > 0) neighbors.push(board[row + 1][col - 1]);
+
+        return neighbors;
+    }
+
+    static initBoard(height:number, width:number):Cell[][] {
         let emptyBoard:Cell[][] = [];
 
         for (let i = 0; i < height; i++) {
@@ -49,23 +67,5 @@ export class GameBuilder {
                 }
             }
         }
-    }
-
-    static getNeighbors(row:number, col:number, board:Cell[][]):Cell[] {
-        const boardHeight:number = board.length;
-        const boardWidth:number = board[0].length;
-        let neighbors:Cell[] = [];
-
-        if (row > 0) neighbors.push(board[row - 1][col]);
-        if (col < boardWidth - 1) neighbors.push(board[row][col + 1]);
-        if (row < boardHeight - 1) neighbors.push(board[row + 1][col]);
-        if (col > 0) neighbors.push(board[row][col - 1]);
-
-        if (row > 0 && col > 0) neighbors.push(board[row - 1][col - 1]);
-        if (row > 0 && col < boardWidth - 1) neighbors.push(board[row - 1][col + 1]);
-        if (row < boardHeight - 1 && col < boardWidth - 1) neighbors.push(board[row + 1][col + 1]);
-        if (row < boardHeight - 1 && col > 0) neighbors.push(board[row + 1][col - 1]);
-
-        return neighbors;
     }
 }

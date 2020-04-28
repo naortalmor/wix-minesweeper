@@ -14,7 +14,6 @@ interface BoardComponentState {
     board:Cell[][];
     minesLeft:number;
     flagsError:boolean;
-    win:boolean;
 }
 
 export class BoardComponent extends React.Component<BoardComponentInputs, BoardComponentState> {
@@ -25,8 +24,7 @@ export class BoardComponent extends React.Component<BoardComponentInputs, BoardC
         this.state = {
             board: GameBuilder.buildBoard(this.props.board.height, this.props.board.width, this.props.board.mines),
             minesLeft: this.props.board.mines,
-            flagsError: false,
-            win: false
+            flagsError: false
         }
     }
 

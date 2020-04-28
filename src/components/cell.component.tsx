@@ -12,21 +12,20 @@ interface CellComponentInputs {
 }
 
 export class CellComponent extends React.Component<CellComponentInputs> {
-
     constructor(props:CellComponentInputs) {
         super(props);
 
         this.click = this.click.bind(this);
     }
 
-    generateCell(cell:Cell, isSuperman:boolean) {
+    renderCell(cell:Cell, isSuperman:boolean) {
       if (isSuperman) {
           if (cell.isFlagged) {
-            return (<FontAwesomeIcon icon={faFlag} />)
+            return <FontAwesomeIcon data-testid="flag" icon={faFlag} />
           }
       } else {
           if (cell.isFlagged) {
-            return <FontAwesomeIcon icon={faFlag} />;
+            return <FontAwesomeIcon data-testid="flag" icon={faFlag} />;
           }
           if (!cell.isRevealed) {
             return null;
@@ -34,19 +33,19 @@ export class CellComponent extends React.Component<CellComponentInputs> {
       }
       
       if (cell.isMine) {
-        return (<FontAwesomeIcon icon={faBomb} />);
+        return (<FontAwesomeIcon data-testid="mine" icon={faBomb} />);
       }
       if (cell.minesArroundCount === 0) {
         return null;
       }
-      return cell.minesArroundCount;
+      return <span data-testid="minesarround-count">{cell.minesArroundCount}</span>;
     }
 
     render() {
         let className = "cell" + (this.props.cell.isRevealed ? "" : " not-revealved");
         return (
-            <div className={className} onClick={this.click}>
-                { this.generateCell(this.props.cell, this.props.isSuperman)}
+            <div className={className} onClick={this.click} data-testid="cell-container">
+                { this.renderCell(this.props.cell, this.props.isSuperman)}
             </div>
         )
     }
